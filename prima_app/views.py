@@ -1,9 +1,11 @@
 from django.shortcuts import render
 
 # Create your views here.
+
+def index_root(request):
+    return render(request, "index_root.html")
 def index(request):
     return render(request, "index.html")
-
 def homepage(request):
     return render(request, "homepage.html")
 def welcome(request):
