@@ -1,9 +1,9 @@
 from django.urls import path
-from seconda_app.views import es_if, index
+from seconda_app.views import es_if, index2
 
 app_name = "seconda_app"
 urlpatterns=[
 
-    path('index', index, name='index'),
+    path('index', index2, name='index'),
     path('es_if', es_if, name='es_if'),
 ]
