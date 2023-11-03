@@ -1,10 +1,12 @@
 <body>
-    <script>
-        let num1 = Math.floor(Math.random() * 11);
-        let num2 = Math.floor(Math.random() * 11);
-        
-        print(num1);
-        print(num2);
-    </script>
-    
+    <p><b>Numeri: </b>{{ numeri }}</p>
+    <p><b>Somma: </b>{{ somma }}</p>
+
+    {% if media < 6 %}
+        <p style="color:red"><b>Media: </b>{{ media }}</p>
+        {% elif media > 6 %}
+            <p style="color:green"><b>Media: </b>{{ media }}</p>
+                {% elif media == 6 %}
+                    <p style="color:black"><b>Media: </b>{{ media }}</p>
+    {% endif %}
 </body>

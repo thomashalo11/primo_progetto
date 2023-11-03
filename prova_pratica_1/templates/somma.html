@@ -1,0 +1,17 @@
+<body>
+
+    <!-- Num 1 -->
+    {% if num1 < num2 %}
+        <b style="color:red">{{ num1 }}</b> <br/>
+        {% elif num1 > num2 %}
+            <b style="color:green">{{ num1 }}</b> <br/>
+      
+    {% endif %}
+    <!-- Num2 -->
+    {% if num2 < num1 %}
+        <b style="color:red">{{ num2 }}</b> <br/>
+        {% elif num2 > num1 %}
+            <b style="color:green">{{ num2 }}</b> <br/>
+            {% endif %}
+    
+</body>
