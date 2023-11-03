@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('prima_app',include("prima_app.urls",namespace="prima_app")),
     path('',include("prima_app.urls",namespace="prima_app")),
-    path('',include("seconda_app.urls", namespace="seconda_app")) # Se da errore controllare QUI che prima andava tutto
-    path('',include("prova_pratica_1.urls", namespace="prova_pratica_1"))
+    path('',include("seconda_app.urls", namespace="seconda_app")), # Se da errore controllare QUI che prima andava tutto
+    path('',include("prova_pratica_1.urls", namespace="prova_pratica_1")),
 ]
