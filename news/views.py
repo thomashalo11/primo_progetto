@@ -39,8 +39,12 @@ def home(request):
     Rispetto alla versione precedente, passiamo direttamente ad articoli e giornalisti tutti gli oggetti (quindi gli articoli e i giornalisti rispettivamente)
     Nel context abbiamo gli articoli e i giornalisti che poi verranno printati.
     """
+    
     articoli = Articolo.objects.all()
     giornalisti = Giornalista.objects.all()
     context = {"articoli:": articoli, "giornalisti": giornalisti}
     print(context)
-    return render(request, "homepage.html", context)
+    return render(request, "homepageNews.html", context)
+
+def homepage(request):
+    return render(request, "homepageNews.html")
