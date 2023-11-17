@@ -22,5 +22,5 @@ urlpatterns = [
     path('',include("prima_app.urls",namespace="homepage")),
     path('prima_app/',include("prima_app.urls",namespace="prima_app")),
     path('seconda_app/',include("seconda_app.urls", namespace="seconda_app")), # Se da errore controllare QUI che prima andava tutto
-    path('news/',include("news.urls", namespace="news"))
+    path('primo_progetto/news/',include("news.urls", namespace="news")),
 ]
