@@ -28,11 +28,11 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#"><b>Root</b></a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Homepage benvenuto</a>
-                <a class="dropdown-item" href="#">Welcome</a>
-                <a class="dropdown-item" href="#">Lista</a>
-                <a class="dropdown-item" href="#">Chi Siamo</a>
-                <a class="dropdown-item" href="#">Variabili</a>
+                <a class="dropdown-item" href="{% url 'prima_app:homepage'%}">Homepage benvenuto</a>
+                <a class="dropdown-item" href="{% url 'prima_app:welcome'%}">Welcome</a>
+                <a class="dropdown-item" href="{% url 'prima_app:lista'%}">Lista</a>
+                <a class="dropdown-item" href="{% url 'prima_app:chi_siamo'%}">Chi Siamo</a>
+                <a class="dropdown-item" href="{% url 'prima_app:variabili'%}">Variabili</a>
                 <div class="dropdown-divider"></div>
             </li>
             <!-- Secondo dropdown -->
@@ -43,8 +43,8 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#"><b>Root</b></a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">es_if</a>
-                <a class="dropdown-item" href="#">if_else_elif</a>
+                <a class="dropdown-item" href="{% url 'seconda_app:es_if'%}">es_if</a>
+                <a class="dropdown-item" href="{% url 'seconda_app:if_else_elif'%}">if_else_elif</a>
                 <div class="dropdown-divider"></div>
             </li>
             <li class="nav-item">
@@ -55,10 +55,10 @@
         </div>
     </nav>
     <div class="container my-4">
-      <%block content%>
-      <%endblock content%>
-      <%block script%>
-      <%endblock script%>
+      {%block content%}
+      {%endblock content%}
+      {%block script%}
+      {%endblock script%}
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

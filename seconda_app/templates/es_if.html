@@ -1,4 +1,7 @@
+{% extends "base.html"%}
 <body>
+{%block title%} {{block.super}} | Esempio es_if {%endblock title%}
+{%block content%}
     <b>var1 = {{var1}}</b> <br/>
     <b>var2 = {{var2}}</b> <br/>
     <b>var3 = {{var3}}</b> <br/>
@@ -26,4 +29,6 @@
     {% if not var1 > var2 %}
         <p><i>var1 non è maggiore di var2</i></p>
     {% endif %}
+{%endblock content%}
+    
 </body>
