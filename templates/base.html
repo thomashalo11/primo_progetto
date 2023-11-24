@@ -13,7 +13,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Primo Progetto</a>
+        <a class="navbar-brand" href="">Primo Progetto</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,11 +22,11 @@
           <ul class="navbar-nav mr-auto">
             <!-- Primo dropdown -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Prima App
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#"><b>Root</b></a>
+                <a class="dropdown-item" href="{% url 'prima_app:index'%}"><b>Root</b></a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{% url 'prima_app:homepage'%}">Homepage benvenuto</a>
                 <a class="dropdown-item" href="{% url 'prima_app:welcome'%}">Welcome</a>
@@ -41,7 +41,7 @@
                 Seconda app
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#"><b>Root</b></a>
+                <a class="dropdown-item" href="{% url 'seconda_app:index2'%}"><b>Root</b></a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{% url 'seconda_app:es_if'%}">es_if</a>
                 <a class="dropdown-item" href="{% url 'seconda_app:if_else_elif'%}">if_else_elif</a>
