@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista materie</title>
+</head>
+<body>
+    <a href="{% url 'voti:index3'%}">Index</a>
+    <p><b>Materie: </b></p>
+    {% for i in materie %}
+        <li>{{ i }}</li>
+    {% endfor %}
+    
+</body>
+</html>

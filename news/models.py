@@ -17,3 +17,7 @@ class Articolo(models.Model):
 
     def __str__(self):
         return self.titolo
+    
+    class Meta:
+        verbose_name = "Articolo"
+        verbose_name_plural = "Articoli"
