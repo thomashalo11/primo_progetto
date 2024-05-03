@@ -15,11 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
+from .views import index
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('prima_app',include("prima_app.urls",namespace="prima_app")),
-    path('',include("prima_app.urls",namespace="prima_app")),
-    path('',include("seconda_app.urls", namespace="seconda_app")) # Se da errore controllare QUI che prima andava tutto
+    path('prima_app/', include("prima_app.urls", namespace = "prima_app")),
+    path('seconda_app/', include("seconda_app.urls", namespace = "seconda_app")),
+    path('news/', include("news.urls", namespace = "news")),
+    path('store/', include("products.urls", namespace = "store")), 
+    path('prova_pratica_1/', include("prova_pratica_1.urls", namespace = "prova_pratica_1")),
+    path('', index, name = 'index'),
+    #Add Django site authentication urls (for login, logout, password management)
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

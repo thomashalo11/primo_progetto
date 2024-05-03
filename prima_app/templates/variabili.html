@@ -1,23 +1,18 @@
+{%extends "base.html"%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% extends "base.html"%}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variabili</title>
+    <title>{%block title%}{{block.super}} | Variabili{%endblock title%}</title>
 </head>
 <body>
-{%block title%} {{block.super}} | Lista {%endblock title%}
-{%block content%}
-    <h1>Variabili</h1>
-    <p>......</p>
-
+    {%block content%}
     <ol>
         <li>{{var1}}</li>
         <li>{{var2}}</li>
         <li>{{var3}}</li>
     </ol>
-{%endblock content%}
-    
+    {%endblock content%}
 </body>
 </html>

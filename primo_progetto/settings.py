@@ -21,14 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)@479wfq2z98dz(q4s6hlyid=)2qccd%_n-p2lhr@nzig%w_1r'
+SECRET_KEY = 'django-insecure-l=+0!m+2(dvop3!mok^03m%tvs392dpc=r^q%njc$@qk(oh2pu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',
-                 'thomastresca.eu.pythonanywhere.com',]
-                 
+ALLOWED_HOSTS = ["*"]
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -42,6 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'prima_app',
     'seconda_app',
+    'news',
+    'prova_pratica_1',
+    'corsheaders',
+    'products',
+    
 ]
 
 MIDDLEWARE = [
@@ -52,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'primo_progetto.urls'
@@ -59,8 +64,11 @@ ROOT_URLCONF = 'primo_progetto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'prima_app/templates'),
-                 os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR,'templates'),
+                 os.path.join(BASE_DIR,'prima_app/templates'),
+                 os.path.join(BASE_DIR,'seconda_app/templates'),
+                 os.path.join(BASE_DIR,'news/templates'),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,9 +129,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+
+#STATIC_URL e MEDIA_URL definiscono gli URL di base per accedere a file statici
+# e file multimediali di un progette DJANGO
+# MEDIA_ROOT definisce la directory fisica sul server in cui vengono
+# salvati i file multimediali
 STATIC_URL = 'static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'uploads'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Password: Halowars
