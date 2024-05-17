@@ -10,10 +10,8 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Cognome</th>
                 <th scope="col">Email</th>
-                {% if request.user.is_authenticated %}
                 <th scope="col">Modifica</th>
                 <th scope="col">Elimina</th>
-                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -22,6 +20,8 @@
                     <td>{{ contatto.nome }}</td>
                     <td>{{ contatto.cognome }}</td>
                     <td>{{ contatto.email }}</td>
+                    <td><button class="btn btn-primary">Modifica</button></td>
+                    <td><button class="btn btn-danger">Elimina</button></td>
                 </tr>
             {% endfor %}
         </tbody>
