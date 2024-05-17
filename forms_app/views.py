@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import FormContatto
 from django.http import HttpResponse
+from .models import Contatto
 
 # Create your views here.
 """
@@ -32,3 +33,9 @@ def contatti(request):
         
     context = {"form": form}
     return render(request, "contatto.html", context)
+
+def visualizza_contatti(request):
+    contatti = Contatto.objects.all()
+    return render(request, 'visualizza_contatti.html', {'contatti': contatti})
+
+def deleteRecord(request, )
