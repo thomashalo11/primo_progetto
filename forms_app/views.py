@@ -38,4 +38,4 @@ def visualizza_contatti(request):
     contatti = Contatto.objects.all()
     return render(request, 'visualizza_contatti.html', {'contatti': contatti})
 
-def deleteRecord(request, )
+#def deleteRecord(request, )
