@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .forms import FormContatto
 from django.http import HttpResponse
 from .models import Contatto
+from django.shortcuts import get_object_or_404, redirect
+from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 """
@@ -38,4 +41,25 @@ def visualizza_contatti(request):
     contatti = Contatto.objects.all()
     return render(request, 'visualizza_contatti.html', {'contatti': contatti})
 
-#def deleteRecord(request, )
+@login_required(login_url="/accounts/login")
+def modifica_contatti(request, pk):
+    contatto = get_object_or_404(Contatto, id=pk)
+    if request.method == "GET":
+        form = FormContatto(instance=contatto)
+    if request.method == "POST":
+        form = FormContatto(request.POST, instance=contatto)
+        if form.is_valid():
+            form.save()
+            return redirect('forms_app:visualizza_contatti')
+
+    context = {'form': form, 'contatto': contatto}
+    return render(request, 'modifica_contatti.html', context)
+
+@staff_member_required(login_url="/accounts/login")
+def elimina_contatti(request, pk):
+    contatto = get_object_or_404(Contatto, id=pk)
+    if request.method == "POST":
+        contatto.delete()
+        return redirect('forms_app:visualizza_contatti')
+    context = {'contatto': contatto}
+    return render(request, 'elimina_contatti.html', context)

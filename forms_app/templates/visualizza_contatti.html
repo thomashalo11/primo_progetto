@@ -10,8 +10,10 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Cognome</th>
                 <th scope="col">Email</th>
+                {% if request.user.is_authenticated %}
                 <th scope="col">Modifica</th>
                 <th scope="col">Elimina</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -20,8 +22,10 @@
                     <td>{{ contatto.nome }}</td>
                     <td>{{ contatto.cognome }}</td>
                     <td>{{ contatto.email }}</td>
-                    <td><button class="btn btn-primary">Modifica</button></td>
-                    <td><button class="btn btn-danger">Elimina</button></td>
+                    {% if request.user.is_authenticated %}
+                    <td><a href="{% url 'forms_app:modifica_contatti' contatto.pk %}"><i class="far fa-edit"></i></a></td>
+                    <td><a href="{% url 'forms_app:elimina_contatti' contatto.pk %}"><i class="fas fa-eraser"></i></a></td>
+                    {% endif %}
                 </tr>
             {% endfor %}
         </tbody>
